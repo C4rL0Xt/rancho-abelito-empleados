@@ -9,8 +9,9 @@ import com.elranchoabelito.empleados.models.entities.PuestoLaboral;
 public class EmpleadoMapper {
 
     public static Empleado toEmpleadoEntity(CreateEmpleadoDTO createEmpleadoDTO, Local local){
+        System.out.println("Id del empleado: " + createEmpleadoDTO.getIdEmpleado());
         Empleado empleado = new Empleado();
-        empleado.setIdEmpleado(createEmpleadoDTO.getId());
+        empleado.setIdEmpleado(createEmpleadoDTO.getIdEmpleado());
         empleado.setNombres(createEmpleadoDTO.getNombres());
         empleado.setApellidos(createEmpleadoDTO.getApellidos());
         empleado.setDni(createEmpleadoDTO.getDni());
@@ -22,6 +23,7 @@ public class EmpleadoMapper {
     }
 
     public static Contrato toContratoEntity(CreateEmpleadoDTO createEmpleadoDTO, Empleado empleado, PuestoLaboral puesto){
+
         Contrato contrato = new Contrato();
         contrato.setIdContrato(createEmpleadoDTO.getIdContrato());
         contrato.setEmpleado(empleado);

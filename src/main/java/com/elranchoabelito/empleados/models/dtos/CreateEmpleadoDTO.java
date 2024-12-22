@@ -3,10 +3,9 @@ package com.elranchoabelito.empleados.models.dtos;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Date;
-import java.util.Locale;
 
 public class CreateEmpleadoDTO {
-    private String IdEmpleado;
+    private String idEmpleado;
     private String nombres;
     private String apellidos;
     private String dni;
@@ -25,12 +24,12 @@ public class CreateEmpleadoDTO {
     public CreateEmpleadoDTO() {
     }
 
-    public String getId() {
-        return IdEmpleado;
+    public String getIdEmpleado() {
+        return idEmpleado;
     }
 
-    public void setId(String id) {
-        this.IdEmpleado = id;
+    public void setIdEmpleado(String idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
 
     public String getNombres() {

@@ -7,6 +7,7 @@ import com.elranchoabelito.empleados.models.entities.Contrato;
 import com.elranchoabelito.empleados.models.entities.Empleado;
 import com.elranchoabelito.empleados.repositories.ContratoRepository;
 import com.elranchoabelito.empleados.services.IContratoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +15,9 @@ import java.util.List;
 @Service
 public class ContratoServiceImpl implements IContratoService {
 
+    @Autowired
     ContratoRepository contratoRepository;
+
     @Override
     public List<ContratoDTO> listarContratosEjerciendo(){
         List<Contrato> contratos = contratoRepository.findAll();

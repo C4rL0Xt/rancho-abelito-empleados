@@ -12,19 +12,25 @@ import com.elranchoabelito.empleados.repositories.LocalRepository;
 import com.elranchoabelito.empleados.repositories.PuestoLaboralRepository;
 import com.elranchoabelito.empleados.services.IEmpleadoService;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class EmpleadoServiceImpl implements IEmpleadoService {
+    @Autowired
     EmpleadoRepository empleadoRepository;
+    @Autowired
     ContratoRepository contratoRepository;
+    @Autowired
     LocalRepository localRepository;
+    @Autowired
     PuestoLaboralRepository puestoLaboralRepository;
     @Override
     @Transactional
     public Contrato createEmpleado(CreateEmpleadoDTO createEmpleadoDTO){
+        System.out.println("Id del empleado: " + createEmpleadoDTO.getIdEmpleado());
         Local local = localRepository.findById(createEmpleadoDTO.getLocal_id()).orElse(null);
         Empleado empleado = EmpleadoMapper.toEmpleadoEntity(createEmpleadoDTO,local);
         empleadoRepository.save(empleado);

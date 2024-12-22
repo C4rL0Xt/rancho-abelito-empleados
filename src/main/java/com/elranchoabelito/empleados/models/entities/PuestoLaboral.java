@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 public class PuestoLaboral {
 
     @Id
-    private Integer idPuesto;
+    private String idPuesto;
 
     private String nombrePuesto;
 
@@ -18,11 +18,11 @@ public class PuestoLaboral {
     public PuestoLaboral() {
     }
 
-    public Integer getIdPuesto() {
+    public String getIdPuesto() {
         return idPuesto;
     }
 
-    public void setIdPuesto(Integer idPuesto) {
+    public void setIdPuesto(String idPuesto) {
         this.idPuesto = idPuesto;
     }
 

@@ -1,9 +1,6 @@
 package com.elranchoabelito.empleados.models.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -19,6 +16,7 @@ public class Empleado {
     private String genero;
     private Date fecha_nacimiento;
     @OneToOne
+    @JoinColumn(name = "id_local")
     private Local id_local;
 
     public Empleado() {
